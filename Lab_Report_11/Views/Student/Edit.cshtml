@@ -1,0 +1,18 @@
+﻿@model Lab_Report_11.Models.Student
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h2>Edit Student</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div><label asp-for="Name"></label><input asp-for="Name" /></div>
+    <div><label asp-for="Age"></label><input asp-for="Age" /></div>
+    <div><label asp-for="Phone"></label><input asp-for="Phone" /></div>
+    <div><label asp-for="Course"></label><input asp-for="Course" /></div>
+    <div><label asp-for="Batch"></label><input asp-for="Batch" /></div>
+    <div><label asp-for="JoinedYear"></label><input asp-for="JoinedYear" /></div>
+    <button type="submit">Save</button>
+</form>

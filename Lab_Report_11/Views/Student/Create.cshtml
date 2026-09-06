@@ -1,0 +1,14 @@
+﻿@model Lab_Report_11.Models.Student
+
+<h2>Add Student</h2>
+<form asp-action="Create" method="post">
+    <div><label>Name:</label> <input asp-for="Name" /></div>
+    <div><label>Age:</label> <input asp-for="Age" /></div>
+    <div><label>Phone:</label> <input asp-for="Phone" /></div>
+    <div><label>Course:</label> <input asp-for="Course" /></div>
+    <div><label>Batch:</label> <input asp-for="Batch" /></div>
+    <div><label>Joined Year:</label> <input asp-for="JoinedYear" /></div>
+    <br />
+    <button type="submit">Create</button>
+</form>
+<a asp-action="Index">Back to List</a>

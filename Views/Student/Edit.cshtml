@@ -1,0 +1,58 @@
+@model Lab_Report_11.Models.Student
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h1>Edit Student</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" type="number" />
+        <span asp-validation-for="Age"></span>
+    </div>
+
+    <div>
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+    </div>
+
+    <div>
+        <label asp-for="Course"></label>
+        <input asp-for="Course" />
+        <span asp-validation-for="Course"></span>
+    </div>
+
+    <div>
+        <label asp-for="Batch"></label>
+        <input asp-for="Batch" />
+        <span asp-validation-for="Batch"></span>
+    </div>
+
+    <div>
+        <label asp-for="JoinedYear"></label>
+        <input asp-for="JoinedYear" type="number" />
+        <span asp-validation-for="JoinedYear"></span>
+    </div>
+
+    <br />
+
+    <button type="submit">Save Changes</button>
+    <a asp-action="Index">Back to List</a>
+
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,76 @@
+﻿@model Lab_Report_11.Models.Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+
+ 
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>Add Student</h1>
+
+        <form asp-action="Create" method="post">
+
+            <div asp-validation-summary="All"
+                 class="error"></div>
+
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"
+                      class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Age"></label>
+                <input asp-for="Age" type="number" />
+                <span asp-validation-for="Age"
+                      class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Phone"></label>
+                <input asp-for="Phone" />
+                <span asp-validation-for="Phone"
+                      class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Course"></label>
+                <input asp-for="Course" />
+                <span asp-validation-for="Course"
+                      class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Batch"></label>
+                <input asp-for="Batch" />
+                <span asp-validation-for="Batch"
+                      class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="JoinedYear"></label>
+                <input asp-for="JoinedYear"
+                       type="number" />
+                <span asp-validation-for="JoinedYear"
+                      class="error"></span>
+            </div>
+
+            <button type="submit">Save Student</button>
+
+        </form>
+
+        <br />
+
+        <a asp-action="Index">Back to Student List</a>
+
+    </div>
+
+</body>
+</html>

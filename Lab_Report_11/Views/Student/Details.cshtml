@@ -1,0 +1,64 @@
+﻿@model Lab_Report_11.Models.Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+</head>
+
+<body>
+
+    <h1>Student Details</h1>
+
+    <hr />
+
+    <p>
+        <strong>ID:</strong>
+        @Model.Id
+    </p>
+
+    <p>
+        <strong>Name:</strong>
+        @Model.Name
+    </p>
+
+    <p>
+        <strong>Age:</strong>
+        @Model.Age
+    </p>
+
+    <p>
+        <strong>Phone:</strong>
+        @Model.Phone
+    </p>
+
+    <p>
+        <strong>Course:</strong>
+        @Model.Course
+    </p>
+
+    <p>
+        <strong>Batch:</strong>
+        @Model.Batch
+    </p>
+
+    <p>
+        <strong>Joined Year:</strong>
+        @Model.JoinedYear
+    </p>
+
+    <br />
+
+    <a asp-action="Edit"
+       asp-route-id="@Model.Id">
+        Edit
+    </a>
+
+    |
+
+    <a asp-action="Index">
+        Back to List
+    </a>
+
+</body>
+</html>

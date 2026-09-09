@@ -18,7 +18,7 @@ namespace Lab11.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Students.ToListAsync());
-        }
+        }  
 
         // DETAILS
         public async Task<IActionResult> Details(int? id)

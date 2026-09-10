@@ -1,7 +1,7 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Lab_Report_11.Data;
 using Lab_Report_11.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Lab_Report_11.Controllers
 {
@@ -14,11 +14,13 @@ namespace Lab_Report_11.Controllers
             _context = context;
         }
 
+        // Read
         public async Task<IActionResult> Index()
         {
             return View(await _context.Students.ToListAsync());
         }
 
+        // Details
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,25 +35,29 @@ namespace Lab_Report_11.Controllers
             return View(student);
         }
 
+        // Create - GET
         public IActionResult Create()
         {
             return View();
         }
 
+        // Create - POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Student student)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(student);
+                _context.Students.Add(student);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
 
             return View(student);
         }
 
+        // Edit - GET
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -65,6 +71,7 @@ namespace Lab_Report_11.Controllers
             return View(student);
         }
 
+        // Edit - POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Student student)
@@ -74,18 +81,8 @@ namespace Lab_Report_11.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(student);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Students.Any(e => e.Id == student.Id))
-                        return NotFound();
-
-                    throw;
-                }
+                _context.Students.Update(student);
+                await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -93,6 +90,7 @@ namespace Lab_Report_11.Controllers
             return View(student);
         }
 
+        // Delete - GET
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -107,6 +105,7 @@ namespace Lab_Report_11.Controllers
             return View(student);
         }
 
+        // Delete - POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

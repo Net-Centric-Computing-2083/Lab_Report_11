@@ -1,0 +1,26 @@
+@model Lab_Report_11.Models.Student
+
+<h1>Student Details</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Name</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+
+    <dt class="col-sm-3">Age</dt>
+    <dd class="col-sm-9">@Model.Age</dd>
+
+    <dt class="col-sm-3">Phone</dt>
+    <dd class="col-sm-9">@Model.Phone</dd>
+
+    <dt class="col-sm-3">Course</dt>
+    <dd class="col-sm-9">@Model.Course</dd>
+
+    <dt class="col-sm-3">Batch</dt>
+    <dd class="col-sm-9">@Model.Batch</dd>
+
+    <dt class="col-sm-3">Joined Year</dt>
+    <dd class="col-sm-9">@Model.JoinedYear</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

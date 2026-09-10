@@ -1,0 +1,42 @@
+@model Lab_Report_11.Models.Student
+
+<h1>Edit Student</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"></label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Course" class="form-label"></label>
+        <input asp-for="Course" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Batch" class="form-label"></label>
+        <input asp-for="Batch" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="JoinedYear" class="form-label"></label>
+        <input asp-for="JoinedYear" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>
